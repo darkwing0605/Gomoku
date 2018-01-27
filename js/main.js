@@ -150,7 +150,7 @@ chess.onclick = (e) => {
 				myWin[k]++;
 				computerWin[k] = 6;
 				if (myWin[k] == 5) {
-					setTimeout(window.alert("你赢了"), 100);
+					window.alert("你赢了");
 					over = true;
 				}
 			}
@@ -169,7 +169,7 @@ const computerAI = () => {
 	let max = 0;
 	// 保存最高分数坐标
 	let u = 0;
-	v = 0;
+	let v = 0;
 	for (let i = 0; i < 15; i++) {
 		myScore[i] = [];
 		computerScore[i] = [];
@@ -192,13 +192,13 @@ const computerAI = () => {
 						} else if (myWin[k] == 4) {
 							myScore[i][j] += 10000;
 						}
-						if (computerScore[k] == 1) {
+						if (computerWin[k] == 1) {
 							computerScore[i][j] += 220;
-						} else if (computerScore[k] == 2) {
+						} else if (computerWin[k] == 2) {
 							computerScore[i][j] += 420;
-						} else if (computerScore[k] == 3) {
+						} else if (computerWin[k] == 3) {
 							computerScore[i][j] += 2100;
-						} else if (computerScore[k] == 4) {
+						} else if (computerWin[k] == 4) {
 							computerScore[i][j] += 20000;
 						}
 					}
@@ -233,7 +233,7 @@ const computerAI = () => {
 			computerWin[k]++;
 			myWin[k] = 6;
 			if (computerWin[k] == 5) {
-				setTimeout(window.alert('计算机赢了'), 100);
+				window.alert('计算机赢了');
 				over = true;
 			}
 		}
